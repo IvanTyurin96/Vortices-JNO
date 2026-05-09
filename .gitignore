@@ -1,0 +1,14 @@
+Assets/_ModAssets_
+Library
+Logs
+ModAssetBundles
+obj
+Packages
+ProjectSettings/*.asset
+ProjectSettings/*.json
+TestResults
+UserSettings
+Temp
+_ModAssets_.meta
+*.vsconfig
+*.vs

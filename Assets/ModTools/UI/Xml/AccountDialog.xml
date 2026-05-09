@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults></Defaults>
+  <Panel id="panel" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" class="dialog-background">
+    <VerticalLayout class="panel border" width="450" contentSizeFitter="vertical" spacing="10" padding="20">
+      <VerticalLayout id="form" contentSizeFitter="vertical" spacing="10" padding="20">
+        <TextMeshPro id="header-text" class="value text-lg" text="LOGIN TO EXISTING ACCOUNT" minHeight="50" />
+        <Panel class="row" padding="0">
+          <TextMeshProInputField id="username-input" text="">
+            <TMP_Placeholder text="Username" alignment="Center" />
+            <TMP_Text text="" alignment="Center" />
+          </TextMeshProInputField>
+        </Panel>
+        <Panel class="row" padding="0">
+          <TextMeshProInputField id="password-input" text="" contentType="Password">
+            <TMP_Placeholder text="Password" alignment="Center" />
+            <TMP_Text text="" alignment="Center" />
+          </TextMeshProInputField>
+        </Panel>
+        <HorizontalLayout id="lost-password" class="hide-row" preferredHeight="40" spacing="10" childForceExpandHeight="true" childForceExpandWidth="false" childAlignment="MiddleCenter">
+          <TextMeshPro text="Lost your password? " />
+          <TextMeshPro class="link" text="Click Here" onClick="OnLostPasswordClicked();" />
+        </HorizontalLayout>
+        <HorizontalLayout id="lost-password" class="hide-row" preferredHeight="40" spacing="10" childForceExpandHeight="true" childForceExpandWidth="false" childAlignment="MiddleCenter">
+          <TextMeshPro text="Don't have an account? " />
+          <TextMeshPro class="link" text="Register Here" onClick="OnRegisterHereClicked();" />
+        </HorizontalLayout>
+      </VerticalLayout>
+      <Panel id="profile" minHeight="128">
+        <Panel rectAlignment="MiddleLeft" width="40%">
+          <TextMeshPro text="Loading..." />
+          <RawImage id="profile-image" width="128" height="128" rectAlignment="MiddleLeft" />
+        </Panel>
+        <VerticalLayout rectAlignment="MiddleRight" width="60%" spacing="10">
+          <TextMeshPro text="Logged in as:" alignment="Left" opacity=".75" />
+          <TextMeshPro id="profile-username" alignment="Left" />
+          <HorizontalLayout height="30" spacing="10" childForceExpandHeight="false">
+            <Button class="btn btn-primary audio-btn-big" onClick="OnViewProfileClicked();">
+              <TextMeshPro text="View Profile" />
+            </Button>
+            <Button class="btn btn-danger audio-btn-big" onClick="OnDeleteProfileClicked();">
+              <TextMeshPro text="Delete Account" />
+            </Button>
+          </HorizontalLayout>
+        </VerticalLayout>
+      </Panel>
+      <Panel preferredHeight="50">
+        <Button id="cancel-button" class="btn audio-btn-back" rectAlignment="LowerLeft" width="150">
+          <TextMeshPro id="cancel-button-text" text="CLOSE" />
+        </Button>
+        <Button id="okay-button" class="btn btn-primary audio-btn-big" rectAlignment="LowerRight" width="150">
+          <TextMeshPro id="okay-button-text" text="OKAY" />
+        </Button>
+        <Button id="logout-button" class="btn btn-primary audio-btn-big" rectAlignment="LowerRight" width="150" active="false">
+          <TextMeshPro text="LOG OUT" />
+        </Button>
+      </Panel>
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>
