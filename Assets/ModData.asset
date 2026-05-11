@@ -29,7 +29,7 @@ MonoBehaviour:
   _steamTitle: 
   _steamVisibility: 0
   _versionMajor: 1
-  _versionMinor: 0
+  _versionMinor: 1
   _partCategories:
   - {fileID: 11400000, guid: da7ce00c4da12084f845990c244e5287, type: 2}
   _parts:

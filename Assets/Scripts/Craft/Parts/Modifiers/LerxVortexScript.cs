@@ -43,8 +43,12 @@ namespace Assets.Scripts.Craft.Parts.Modifiers
 
 		private void Update()
 		{
-			GetAndClampModifiers();
-			TuneVortex();
+			if (Game.InDesignerScene)
+			{
+				GetAndClampModifiers();
+				TuneVortex();
+			}
+
 			VortexControl();
 		}
 
@@ -102,13 +106,21 @@ namespace Assets.Scripts.Craft.Parts.Modifiers
 			float defaultRateOverTime = 500f;
 			emission.rateOverTime = defaultRateOverTime * _emission;
 
-			if (_visibleInDesigner)
+			if (Game.InDesignerScene)
+			{
+				if (_visibleInDesigner)
+				{
+					ParticleSystem.gameObject.SetActive(true);
+				}
+				else
+				{
+					ParticleSystem.gameObject.SetActive(false);
+				}
+			}
+
+			if (Game.InFlightScene)
 			{
 				ParticleSystem.gameObject.SetActive(true);
-			}
-			else
-			{
-				ParticleSystem.gameObject.SetActive(false);
 			}
 		}
 
